@@ -2,8 +2,7 @@
 import Link from 'next/link';
 import { 
   FaHome, FaUserFriends, FaCompass, FaVideo, 
-  FaInbox, FaRegUser, FaPlus 
-} from 'react-icons/fa';
+  FaInbox, FaRegUser, FaPlus } from 'react-icons/fa';
 
 export default function MainLayout({ children }) {
   return (
@@ -25,19 +24,19 @@ export default function MainLayout({ children }) {
               </Link>
             </li>
             <li>
-              <Link href="/following" className="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+              <Link href="/following" className="flex items-center p-3 hover:bg-gray-100 rounded-md mx-2">
                 <FaUserFriends className="text-xl mr-3" />
                 <span>Following</span>
               </Link>
             </li>
             <li>
-              <Link href="/explore" className="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+              <Link href="/explore" className="flex items-center p-3 hover:bg-gray-100 rounded-md mx-2">
                 <FaCompass className="text-xl mr-3" />
                 <span>Explore</span>
               </Link>
             </li>
             <li>
-              <Link href="/live" className="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+              <Link href="/live" className="flex items-center p-3 hover:bg-gray-100 rounded-md mx-2">
                 <FaVideo className="text-xl mr-3" />
                 <span>LIVE</span>
               </Link>
@@ -62,9 +61,16 @@ export default function MainLayout({ children }) {
           <p className="text-sm text-gray-500 mb-4">
             Log in to follow creators, like videos, and view comments.
           </p>
-          <button className="w-full py-2 px-4 border rounded-md font-medium mb-2 hover:bg-gray-100">
-            Login
-          </button>
+          <Link href="/login">
+            <button className="w-full py-2 px-4 border rounded-md font-medium mb-2 hover:bg-gray-50">
+              Login
+            </button>
+          </Link>
+          <Link href="/signup">
+            <button className="w-full py-2 px-4 border bg-red-500 text-white rounded-md font-medium mb-2 hover:bg-gray-50">
+              Signup
+            </button>
+          </Link>
         </div>
 
         <div className="border-t px-3 py-4 text-xs text-gray-500">
@@ -93,10 +99,12 @@ export default function MainLayout({ children }) {
                   <FaPlus className="mr-2" /> Upload
                 </button>
               </Link>
+              <Link href="/login">
+                <button className="bg-red-500 text-white px-6 py-1 rounded-md hover:bg-red-600">
+                  Log in
+                </button>
+              </Link>
               
-              <button className="bg-red-500 text-white px-6 py-1 rounded-md hover:bg-red-600">
-                Log in
-              </button>
             </div>
             <div>
               <Link href="/profile" className="flex items-center p-3 hover:bg-gray-100 rounded-md mx-2">
@@ -110,6 +118,6 @@ export default function MainLayout({ children }) {
           <main>{children}</main>
         </div>
       </div>
-    </div>
-  );
+    </div>
+  );
 }
