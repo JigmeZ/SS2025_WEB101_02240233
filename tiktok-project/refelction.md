@@ -37,4 +37,3 @@ Overall, this activity strengthened my abilities in React, Next.js, and form han
 - Learned to apply form validation and display error messages.
 - Improved frontend development and application structuring skills.
 
-## Practical 2
